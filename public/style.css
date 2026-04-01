@@ -27,6 +27,47 @@ body {
   letter-spacing: 0.02em;
 }
 
+.login-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.login-box {
+  background: #111;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  color: #fff;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.google-btn {
+  display: inline-block;
+  background: #4285F4;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#logoutBtn {
+  margin-left: 1rem;
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 0.3rem 0.7rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
 .scan {
   position: fixed;
   inset: 0;

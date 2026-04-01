@@ -1,27 +1,37 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Neon LifeOS</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neon LifeOS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div id="loginOverlay" class="login-overlay">
+    <div class="login-box">
+      <h2>Welcome to LifeOS</h2>
+      <a href="/auth/google" class="google-btn">Sign in with Google</a>
+    </div>
+  </div>
+
   <div class="scan"></div>
-  <div class="app">
+  <div class="app" style="display:none;"> <!-- Hidden until login -->
     <header>
       <div class="title-wrap">
         <div>
           <h1>LifeOS</h1>
         </div>
         <div class="theme-controls" id="themeControls"></div>
+        <div id="userInfo" style="display:inline-block; margin-left:1rem;"></div>
+        <button id="logoutBtn" style="display:none;">Logout</button>
       </div>
     </header>
 
     <main class="layout">
+      <!-- Calendar Panel -->
       <section class="panel calendar-panel">
         <h2>Calendar</h2>
         <div class="calendar-header">
@@ -47,6 +57,7 @@
         </form>
       </section>
 
+      <!-- To-Do Panel -->
       <section class="panel todo-panel">
         <h2>To-Do</h2>
         <form id="todoForm">
@@ -66,6 +77,7 @@
         <ul id="todoList" class="spaced"></ul>
       </section>
 
+      <!-- Project Panel -->
       <section class="panel project-panel">
         <h2>Project Tracker</h2>
         <form id="projectForm">
@@ -79,6 +91,7 @@
         <ul id="projectList" class="spaced"></ul>
       </section>
 
+      <!-- Countdown Panel -->
       <section class="panel countdown-panel">
         <h2>Countdowns & Anniversaries</h2>
         <form id="countdownForm">
@@ -96,6 +109,32 @@
       </section>
     </main>
   </div>
+
+  <script>
+    // Check if user is logged in
+    async function checkLogin() {
+      try {
+        const res = await fetch('/api/user');
+        const data = await res.json();
+        const user = data.user;
+        if (user) {
+          document.getElementById('loginOverlay').style.display = 'none';
+          document.querySelector('.app').style.display = 'block';
+          document.getElementById('userInfo').textContent = `Logged in as: ${user.displayName}`;
+          document.getElementById('logoutBtn').style.display = 'inline-block';
+        }
+      } catch(e) {
+        console.log('Not logged in');
+      }
+    }
+
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+      window.location.href = '/auth/logout';
+    });
+
+    checkLogin();
+  </script>
+
   <script src="app.js"></script>
 </body>
 </html>

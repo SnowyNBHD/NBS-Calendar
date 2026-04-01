@@ -21,7 +21,6 @@ const PORT = 3000;
 const DATA_DIR = path.join(__dirname, 'data');
 if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR);
 
-
 app.use(express.static('public'));
 app.use(express.json());
 app.use(session({
@@ -42,7 +41,7 @@ passport.deserializeUser((user, done) => {
 passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID,
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-  callbackURL: '/auth/google/callback'
+  callbackURL: process.env.GOOGLE_CALLBACK_URL
 }, (accessToken, refreshToken, profile, done) => {
   // You can store user info in DB here if needed
   return done(null, { id: profile.id, displayName: profile.displayName, email: profile.emails[0].value });
