@@ -1,0 +1,118 @@
+{
+  "theme": "cyan-magenta",
+  "updatedAt": 1774503694974,
+  "calendarEvents": [],
+  "todos": [
+    {
+      "id": "b0730f90-d972-4e58-bdd1-dd786902fff9",
+      "text": "Spanish",
+      "category": "school",
+      "done": false
+    },
+    {
+      "id": "8dd020fd-c16c-4211-b80f-e38d6d85df22",
+      "text": "Study for calc test",
+      "category": "school",
+      "done": true
+    },
+    {
+      "id": "3bb7e4a9-c8aa-4b34-ac5e-13f786168db9",
+      "text": "FBLA Test Prep",
+      "category": "school",
+      "done": false
+    },
+    {
+      "id": "8f1abb2e-0882-43b6-aeb4-849eddfabfdf",
+      "text": "FBLA Website Project",
+      "category": "school",
+      "done": false
+    },
+    {
+      "id": "20993770-a69f-46bc-b847-cebe9e655392",
+      "text": "FBLA Coding Project",
+      "category": "school",
+      "done": false
+    },
+    {
+      "id": "d25e4dbc-9759-46ce-84d6-674440c8fa2e",
+      "text": "Current events article -missing",
+      "category": "school",
+      "done": false
+    },
+    {
+      "id": "b5d1b889-775d-417a-838b-e404e99bee6b",
+      "text": "Current events article",
+      "category": "school",
+      "done": false
+    },
+    {
+      "id": "55380dbc-f457-48cb-a136-f994d4770c9f",
+      "text": "Makeup calc test",
+      "category": "school",
+      "done": true
+    },
+    {
+      "id": "8f079f67-c894-488a-960c-1a07c67e5b8f",
+      "text": "APUSH Review Project",
+      "category": "school",
+      "done": false
+    },
+    {
+      "id": "dcf07db4-b569-4ff3-bc2a-f85235881f38",
+      "text": "APUSH Test",
+      "category": "school",
+      "done": true
+    },
+    {
+      "id": "67d847f9-48c9-4b99-8a4d-8293bef39b55",
+      "text": "APUSH LEQ",
+      "category": "school",
+      "done": false
+    },
+    {
+      "id": "743447b5-2a07-4d27-ac6b-17a0badb0960",
+      "text": "APUSH Practice LEQS",
+      "category": "school",
+      "done": false
+    },
+    {
+      "id": "910444ed-3726-4d5e-8413-d14b4fc497b1",
+      "text": "APUSH Study Guide -missing",
+      "category": "school",
+      "done": false
+    },
+    {
+      "id": "e0266c69-6354-4f34-acdb-5c9bd6b96289",
+      "text": "APUSH Study guide, current",
+      "category": "school",
+      "done": false
+    },
+    {
+      "id": "2e76ff8f-9e5b-4c95-9d8c-3b88ab066920",
+      "text": "Move rotc seats",
+      "category": "school",
+      "done": false
+    },
+    {
+      "id": "5e49bc5d-08a6-41c7-a27a-f01e6a19fb66",
+      "text": "AP Physics Classroom",
+      "category": "school",
+      "done": false
+    },
+    {
+      "id": "f0a55f45-d484-4eff-8f55-e551931d2322",
+      "text": "Check Notes AP Physics",
+      "category": "school",
+      "done": false
+    }
+  ],
+  "projects": [],
+  "countdowns": [
+    {
+      "id": "09420d76-9ce4-4ec2-b0c0-8d5ac27ec4b6",
+      "name": "Jasmine <3",
+      "date": "2025-10-10",
+      "type": "anniversary"
+    }
+  ]
+}

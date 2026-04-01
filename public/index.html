@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Neon LifeOS</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="scan"></div>
+  <div class="app">
+    <header>
+      <div class="title-wrap">
+        <div>
+          <h1>LifeOS</h1>
+        </div>
+        <div class="theme-controls" id="themeControls"></div>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel calendar-panel">
+        <h2>Calendar</h2>
+        <div class="calendar-header">
+          <div class="row">
+            <button id="prevMonth" aria-label="Previous month">&lt;</button>
+            <p id="monthName" class="month-name"></p>
+            <button id="nextMonth" aria-label="Next month">&gt;</button>
+          </div>
+          <div class="small" id="eventsCount"></div>
+        </div>
+        <div class="calendar-grid" id="calendarGrid"></div>
+        <form id="calendarForm" class="spaced">
+          <div class="row">
+            <input type="date" id="eventDate" required>
+            <input type="text" id="eventTitle" placeholder="Add event / class / plan..." maxlength="90" required>
+            <select id="eventType">
+              <option value="study">Study</option>
+              <option value="deadline">Deadline</option>
+              <option value="personal">Personal</option>
+            </select>
+            <button class="primary" type="submit">Add</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel todo-panel">
+        <h2>To-Do</h2>
+        <form id="todoForm">
+          <div class="row">
+            <input type="text" id="todoInput" placeholder="New task..." maxlength="100" required>
+            <select id="todoCategory">
+              <option value="school">School</option>
+              <option value="life">Life</option>
+              <option value="work">Work</option>
+            </select>
+            <button class="primary" type="submit">Add</button>
+          </div>
+        </form>
+        <div class="row spaced">
+          <span class="chip" id="todoStats"></span>
+        </div>
+        <ul id="todoList" class="spaced"></ul>
+      </section>
+
+      <section class="panel project-panel">
+        <h2>Project Tracker</h2>
+        <form id="projectForm">
+          <div class="row">
+            <input type="text" id="projectName" placeholder="Project name..." maxlength="60" required>
+            <input type="number" id="projectProgress" min="0" max="100" value="0" required>
+            <input type="date" id="projectDue">
+            <button class="primary" type="submit">Create</button>
+          </div>
+        </form>
+        <ul id="projectList" class="spaced"></ul>
+      </section>
+
+      <section class="panel countdown-panel">
+        <h2>Countdowns & Anniversaries</h2>
+        <form id="countdownForm">
+          <div class="row">
+            <input type="text" id="countdownName" placeholder="Name (exam, birthday, trip...)" maxlength="70" required>
+            <input type="date" id="countdownDate" required>
+            <select id="countdownType">
+              <option value="countdown">Countdown</option>
+              <option value="anniversary">Anniversary</option>
+            </select>
+            <button class="primary" type="submit">Add</button>
+          </div>
+        </form>
+        <ul id="countdownList" class="spaced"></ul>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
